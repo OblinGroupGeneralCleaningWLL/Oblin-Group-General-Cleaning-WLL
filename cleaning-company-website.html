@@ -1024,7 +1024,8 @@ function sendWaJob(){
 
 // Quote WA
 function sendQuoteWA(){
-  var n=document.getElementById('qName').value.trim(),p=document.getElementById('qPhone').value.trim(),s=document.getElementById('qService').value,l=document.getElementById('qLoc').value,nt=document.getElementById('qNotes').value.trim();
+  var get=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
+  var n=get('qName'),p=get('qPhone'),s=get('qService'),l=get('qLoc'),nt=get('qNotes');
   var m='Hello Santro Doha! I would like a *FREE QUOTE* 🧹';
   if(n)m+='%0A%0A👤 *Name:* '+enc(n);
   if(p)m+='%0A📱 *Phone:* '+enc(p);
@@ -1045,10 +1046,12 @@ function sendBookingWA(){
 
 // Apply WA
 function sendApplyWA(){
-  var n=document.getElementById('aName').value.trim(),nat=document.getElementById('aNat').value,r=document.getElementById('aRole').value,e=document.getElementById('aExp').value,l=document.getElementById('aLoc').value.trim();
+  var n=document.getElementById('alName')?document.getElementById('alName').value.trim():'';
+  var r=document.getElementById('alRole')?document.getElementById('alRole').value:'';
+  var e=document.getElementById('alExp')?document.getElementById('alExp').value:'';
+  var l=document.getElementById('alLoc')?document.getElementById('alLoc').value.trim():'';
   var m='Hello Santro Doha! I would like to *APPLY* for a position 💼';
   if(n)m+='%0A%0A👤 *Name:* '+enc(n);
-  if(nat)m+='%0A🌍 *Nationality:* '+enc(nat);
   if(r)m+='%0A💼 *Role:* '+enc(r);
   if(e)m+='%0A📋 *Experience:* '+enc(e);
   if(l)m+='%0A📍 *Location:* '+enc(l);
