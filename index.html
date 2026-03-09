@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Santro Doha Cleaning — Qatar's Trusted Home Services</title>
+<meta name="theme-color" content="#021825"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Santro Doha"/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#021825;--deep:#032435;--surface:rgba(255,255,255,.04);
+  --cyan:#00b4d8;--cyan2:#90e0ef;--gold:#C9963A;--gold2:#e8b86d;
+  --text:#e8f4f8;--muted:rgba(255,255,255,.45);--border:rgba(255,255,255,.08);
+  --cream:#f4f1eb;--black:#070c10;--off-white:#f8f6f2;--teal:#0a7d8c;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(2,24,37,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo img{height:34px}
+.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:2px;color:var(--cyan);line-height:1}
+.nav-logo-text span{color:#fff}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:flex;gap:.7rem}
+.nav-btn{padding:.5rem 1.2rem;border-radius:100px;font-size:.77rem;font-weight:700;text-decoration:none;transition:all .25s;border:1.5px solid}
+.nav-btn-client{background:rgba(0,180,216,.15);border-color:rgba(0,180,216,.5);color:var(--cyan2)}
+.nav-btn-client:hover{background:rgba(0,180,216,.3)}
+.nav-btn-hire{background:rgba(201,150,58,.15);border-color:rgba(201,150,58,.5);color:var(--gold2)}
+.nav-btn-hire:hover{background:rgba(201,150,58,.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+
+/* MOBILE MENU */
+#mobile-menu{display:none;position:fixed;inset:0;background:rgba(2,24,37,.98);z-index:950;flex-direction:column;overflow-y:auto}
+#mobile-menu.open{display:flex}
+.mob-inner{display:flex;flex-direction:column;min-height:100%;padding:1.5rem 1.4rem 2rem}
+.mob-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-brand{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--cyan)}
+.mob-brand span{color:#fff}
+.mob-close{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mob-links{display:flex;flex-direction:column;gap:.3rem;list-style:none;margin-bottom:1.5rem}
+.mob-links a{color:rgba(255,255,255,.75);text-decoration:none;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;padding:.75rem 1rem;border-radius:10px;display:flex;align-items:center;gap:.6rem;transition:all .2s}
+.mob-links a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mob-divider{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);padding:.5rem 1rem;margin-bottom:.3rem}
+.mob-listings{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.5rem}
+.mob-listing-btn{display:flex;align-items:center;gap:.9rem;padding:1rem 1.2rem;border-radius:14px;border:1.5px solid;cursor:pointer;font-family:'DM Sans',sans-serif;text-align:left;transition:all .3s;backdrop-filter:blur(12px);width:100%}
+.mob-listing-btn-job{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.35);color:#7ae89a}
+.mob-listing-btn-job:hover{background:rgba(37,211,102,.22)}
+.mob-listing-btn-cli{background:rgba(0,180,216,.1);border-color:rgba(0,180,216,.35);color:var(--cyan2)}
+.mob-listing-btn-cli:hover{background:rgba(0,180,216,.22)}
+.mob-listing-ico{font-size:1.6rem;flex-shrink:0}
+.mob-listing-text strong{display:block;font-size:.9rem;font-weight:700;margin-bottom:.1rem}
+.mob-listing-text span{font-size:.72rem;opacity:.65}
+.mob-cta{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:auto;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08)}
+
+/* VISITOR BANNER */
+#vbanner{background:var(--black);border-bottom:1px solid var(--border);padding:.5rem 1.2rem;display:flex;align-items:center;justify-content:center;gap:.8rem;flex-wrap:wrap;position:relative;z-index:800;margin-top:58px}
+.vb-lbl{font-size:.7rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.vb-btn{padding:.38rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;cursor:pointer;border:1.5px solid;transition:all .2s;text-decoration:none}
+.vb-c{background:rgba(0,180,216,.1);border-color:rgba(0,180,216,.4);color:var(--cyan2)}
+.vb-c:hover{background:rgba(0,180,216,.22)}
+.vb-j{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.35);color:#7ae89a}
+.vb-j:hover{background:rgba(37,211,102,.2)}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:5rem 4rem 4rem;gap:3rem;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(0,180,216,.07) 0%,transparent 70%),var(--bg)}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.3);color:var(--cyan2);padding:.28rem .9rem;border-radius:100px;font-size:.67rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.1rem}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:1;letter-spacing:2px;color:#fff;margin-bottom:1.1rem}
+.hero-title .accent{color:var(--cyan)}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.7;max-width:460px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-primary{padding:.85rem 2rem;background:linear-gradient(135deg,var(--cyan),#0077b6);border:none;border-radius:100px;color:#fff;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,180,216,.35)}
+.btn-ghost{padding:.85rem 2rem;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:100px;color:#fff;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+.hero-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:1.8rem;backdrop-filter:blur(20px)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.4rem}
+.h-stat{text-align:center;padding:1.1rem;background:rgba(0,180,216,.06);border:1px solid rgba(0,180,216,.14);border-radius:12px}
+.h-stat-val{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--cyan);line-height:1}
+.h-stat-lbl{font-size:.68rem;color:var(--muted);margin-top:.15rem}
+
+/* SECTION */
+section{padding:5rem 3.5rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.05;margin-bottom:.7rem}
+.section-sub{color:var(--muted);font-size:.92rem;line-height:1.7;max-width:540px;margin-bottom:2.2rem}
+.reveal{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+.js-ready .reveal{opacity:0;transform:translateY(24px)}
+.js-ready .reveal.visible{opacity:1;transform:none}
+
+/* SERVICES */
+#services{background:linear-gradient(160deg,#021825 0%,#032c40 50%,#021825 100%);color:#fff;overflow:hidden;position:relative}
+#services::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,180,216,.07) 0%,transparent 70%);pointer-events:none}
+#services .section-title{color:#fff}
+#services .section-sub{color:var(--muted)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.3rem}
+.svc-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:1.8rem;
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  transition:all .4s cubic-bezier(.23,1,.32,1);
+  position:relative;overflow:hidden;
+  animation:floatCard 4s ease-in-out infinite;
+  box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.12);
+}
+.svc-card:nth-child(1){animation-delay:0s}
+.svc-card:nth-child(2){animation-delay:.6s}
+.svc-card:nth-child(3){animation-delay:1.2s}
+.svc-card:nth-child(4){animation-delay:1.8s}
+@keyframes floatCard{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-8px)}
+}
+.svc-card::before{
+  content:'';position:absolute;top:-60%;left:-60%;width:220%;height:220%;
+  background:conic-gradient(from 180deg at 50% 50%,transparent 0deg,rgba(0,180,216,.06) 60deg,rgba(144,224,239,.1) 120deg,transparent 180deg,rgba(201,150,58,.05) 240deg,transparent 360deg);
+  animation:rotateShine 8s linear infinite;
+  pointer-events:none;
+}
+.svc-card:nth-child(2)::before{animation-delay:-2s}
+.svc-card:nth-child(3)::before{animation-delay:-4s}
+.svc-card:nth-child(4)::before{animation-delay:-6s}
+@keyframes rotateShine{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.svc-card::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+  transition:left .6s ease;pointer-events:none;
+}
+.svc-card:hover::after{left:150%}
+.svc-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 24px 60px rgba(0,180,216,.2),0 0 0 1px rgba(0,180,216,.3),inset 0 1px 0 rgba(255,255,255,.2);
+  border-color:rgba(0,180,216,.4);
+  background:rgba(0,180,216,.1);
+  animation:none;
+}
+.svc-icon{font-size:2rem;margin-bottom:.9rem;display:block;filter:drop-shadow(0 0 8px rgba(0,180,216,.4))}
+.svc-name{font-weight:700;font-size:.95rem;margin-bottom:.4rem;color:#fff}
+.svc-desc{font-size:.81rem;color:rgba(255,255,255,.55);line-height:1.6}
+.svc-icon{font-size:1.9rem;margin-bottom:.9rem}
+.svc-name{font-weight:700;font-size:.95rem;margin-bottom:.4rem;color:#1a1a2e}
+.svc-desc{font-size:.81rem;color:#666;line-height:1.6}
+
+/* HOME STAFF */
+#homestaff{background:linear-gradient(160deg,#032435 0%,#0a0f18 100%);color:#fff}
+.toggle-wrap{display:flex;gap:.7rem;margin-bottom:2rem;flex-wrap:wrap}
+.ttab{padding:.5rem 1.4rem;border-radius:100px;font-size:.8rem;font-weight:700;cursor:pointer;border:1.5px solid var(--border);color:var(--muted);background:transparent;transition:all .2s;font-family:'DM Sans',sans-serif}
+.ttab.on{background:rgba(0,180,216,.18);border-color:rgba(0,180,216,.5);color:var(--cyan2)}
+.staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+.staff-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:1.8rem;transition:all .3s}
+.staff-card:hover{background:rgba(255,255,255,.07)}
+.staff-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--cyan);letter-spacing:1px;margin-bottom:.45rem}
+.staff-card p{font-size:.83rem;color:var(--muted);line-height:1.65}
+.sf-list{list-style:none;margin-top:1.1rem;display:flex;flex-direction:column;gap:.45rem}
+.sf-list li{display:flex;align-items:center;gap:.55rem;font-size:.81rem;color:rgba(255,255,255,.7)}
+.sf-list li::before{content:'✓';color:var(--cyan);font-weight:700;flex-shrink:0}
+
+/* WHY */
+#why{background:var(--black);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-pts{display:flex;flex-direction:column;gap:1.4rem}
+.why-pt{display:flex;gap:.9rem;align-items:flex-start}
+.why-ico{width:42px;height:42px;border-radius:10px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.2);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.why-pt h4{font-weight:700;font-size:.92rem;margin-bottom:.22rem;color:#fff}
+.why-pt p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.why-tiles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.why-tile{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:1.4rem;text-align:center}
+.why-tile-val{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--cyan);line-height:1}
+.why-tile-lbl{font-size:.7rem;color:var(--muted);margin-top:.15rem}
+
+/* NATIONALITIES */
+#nationals{background:var(--deep);padding:4rem 3.5rem;text-align:center}
+.flag-wrap{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:1.8rem}
+.flag-c{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:.7rem 1.3rem;display:flex;align-items:center;gap:.5rem;font-size:.8rem}
+.flag-c span{font-size:1.35rem}
+
+/* NOTICE BOARD */
+#noticeboard{background:linear-gradient(160deg,#021825 0%,#032435 60%,#021825 100%);padding:5rem 3.5rem;position:relative;overflow:hidden}
+#noticeboard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(201,150,58,.7),transparent)}
+.nb-tabs{display:flex;justify-content:center;gap:.9rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.nb-tab{padding:.55rem 1.6rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;border:1.5px solid var(--border);color:var(--muted);background:transparent;transition:all .25s}
+.nb-tab.nbon{background:rgba(201,150,58,.18);border-color:rgba(201,150,58,.6);color:var(--gold2)}
+.nb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem;min-height:80px}
+.nb-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:1.4rem;transition:all .3s}
+.nb-card:hover{background:rgba(255,255,255,.07);transform:translateY(-3px)}
+.nb-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.18rem .65rem;border-radius:100px;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem}
+.nb-badge-job{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#6de08a}
+.nb-badge-client{background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.3);color:var(--cyan2)}
+.nb-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#fff;letter-spacing:1px;margin-bottom:.35rem}
+.nb-card-desc{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem}
+.nb-card-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:.65rem}
+.nb-date{font-size:.65rem;color:rgba(255,255,255,.22)}
+.nb-act{padding:.3rem .85rem;border-radius:100px;font-size:.68rem;font-weight:700;text-decoration:none;border:1px solid rgba(201,150,58,.4);color:var(--gold2);background:rgba(201,150,58,.08);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.nb-act:hover{background:rgba(201,150,58,.22)}
+.nb-empty{text-align:center;padding:3rem;color:var(--muted);font-size:.88rem;grid-column:1/-1}
+
+/* QUOTE */
+#quote{background:linear-gradient(160deg,#021825 0%,#032435 60%,#021825 100%);padding:5rem 3.5rem;position:relative}
+#quote::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,180,216,.7),transparent)}
+.quote-wrap{max-width:700px;margin:0 auto}
+.q-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,180,216,.2);border-radius:18px;padding:2rem;backdrop-filter:blur(16px)}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.q-field{display:flex;flex-direction:column;gap:.3rem}
+.q-field.full{grid-column:1/-1}
+.q-lbl{font-size:.66rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,180,216,.8)}
+.q-input,.q-select,.q-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:.7rem .95rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;transition:border .2s;width:100%}
+.q-input:focus,.q-select:focus,.q-textarea:focus{border-color:rgba(0,180,216,.5)}
+.q-select option{background:#021825}
+.q-textarea{resize:vertical;min-height:72px}
+.q-submit{width:100%;padding:.95rem;background:linear-gradient(135deg,rgba(0,119,182,.35),rgba(0,180,216,.25));border:1.5px solid rgba(0,180,216,.55);border-radius:100px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.55rem}
+.q-submit:hover{background:linear-gradient(135deg,rgba(0,119,182,.55),rgba(0,180,216,.4));box-shadow:0 10px 32px rgba(0,180,216,.3);transform:translateY(-2px)}
+
+/* BOOK */
+#book{background:linear-gradient(135deg,#0d1a26 0%,#0a1218 100%)}
+.book-h{text-align:center;margin-bottom:2.5rem}
+.book-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;max-width:860px;margin:0 auto}
+.book-form{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:2rem;backdrop-filter:blur(20px)}
+.book-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;margin-bottom:.25rem}
+.book-form>p{color:var(--muted);font-size:.8rem;margin-bottom:1.5rem}
+.f-group{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
+.f-lbl{font-size:.67rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.f-inp,.f-sel,.f-txt{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:9px;padding:.7rem .95rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;transition:border .2s;width:100%}
+.f-inp:focus,.f-sel:focus,.f-txt:focus{border-color:rgba(0,180,216,.5)}
+.f-sel option{background:#021825}
+.f-txt{resize:vertical;height:75px}
+.f-sub{width:100%;padding:.88rem;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:11px;color:#fff;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s;margin-top:.4rem}
+.f-sub:hover{opacity:.88}
+
+/* REVIEWS */
+#reviews{background:var(--off-white)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.3rem;margin-top:2.2rem}
+.rev-card{background:#fff;border-radius:12px;padding:1.7rem;border:1px solid rgba(0,0,0,.06);position:relative}
+.rev-card::before{content:'"';font-size:4.5rem;color:var(--gold);opacity:.12;position:absolute;top:.3rem;right:.9rem;line-height:1;font-family:Georgia,serif}
+.stars{color:var(--gold);margin-bottom:.65rem;font-size:.86rem}
+.rev-text{font-size:.83rem;line-height:1.7;color:#333;margin-bottom:.9rem}
+.reviewer{display:flex;align-items:center;gap:.7rem}
+.rev-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.73rem;flex-shrink:0}
+.rev-name{font-weight:600;font-size:.82rem;color:#1a1a2e}
+.rev-loc{font-size:.7rem;color:#888}
+
+/* CAREERS */
+#careers{background:var(--deep);color:#fff}
+.careers-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.perks-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.5rem}
+.perk{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:11px;padding:1.1rem;text-align:center}
+.perk-ico{font-size:1.5rem;margin-bottom:.35rem}
+.perk-nm{font-weight:700;font-size:.83rem;color:#fff}
+.perk-ds{font-size:.72rem;color:var(--muted);margin-top:.18rem}
+.apply-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:2rem}
+.apply-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;margin-bottom:.2rem}
+.apply-form>p{color:var(--muted);font-size:.8rem;margin-bottom:1.4rem}
+
+/* FOOTER */
+footer{background:var(--black);color:var(--text);padding:3.5rem 3.5rem 2rem}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.ft-brand-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;color:var(--cyan);margin-bottom:.55rem}
+.ft-brand-name span{color:#fff}
+.ft-brand-desc{font-size:.8rem;color:var(--muted);line-height:1.6;max-width:220px;margin-bottom:.9rem}
+.ft-col h4{font-size:.67rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.ft-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;transition:color .2s}
+.ft-col ul li a:hover{color:#fff}
+.ft-bot{border-top:1px solid var(--border);padding-top:1.3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.ft-bot span{font-size:.75rem;color:var(--muted)}
+.ft-bot a{color:var(--cyan2);text-decoration:none;font-size:.75rem}
+
+/* FLOATING GLASS BUTTONS */
+#fab-bar{position:fixed;bottom:1.8rem;left:50%;transform:translateX(-50%);z-index:850;display:flex;gap:.8rem;pointer-events:none}
+.fab{pointer-events:all;display:flex;align-items:center;gap:.55rem;padding:.65rem 1.4rem;border-radius:100px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;backdrop-filter:blur(22px);transition:all .3s;box-shadow:0 6px 28px rgba(0,0,0,.4);white-space:nowrap}
+.fab-job{background:rgba(37,211,102,.18);border:1.5px solid rgba(37,211,102,.45);color:#7ae89a}
+.fab-job:hover{background:rgba(37,211,102,.32);transform:translateY(-3px);box-shadow:0 10px 36px rgba(37,211,102,.25)}
+.fab-cli{background:rgba(0,180,216,.18);border:1.5px solid rgba(0,180,216,.45);color:var(--cyan2)}
+.fab-cli:hover{background:rgba(0,180,216,.32);transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,180,216,.25)}
+@media(max-width:600px){
+  #fab-bar{gap:.5rem;bottom:1rem;padding:0 .5rem}
+  .fab{padding:.58rem 1rem;font-size:.72rem}
+}
+
+/* WA FLOAT */
+#wa-float{position:fixed;bottom:5rem;right:1.6rem;z-index:997;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+#wa-btn{width:54px;height:54px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.45);position:relative;transition:transform .3s}
+#wa-btn:hover{transform:scale(1.1)}
+#wa-btn svg{width:26px;height:26px;fill:#fff}
+#wa-pulse{position:absolute;inset:-4px;border-radius:50%;background:rgba(37,211,102,.28);animation:wap 2s infinite}
+@keyframes wap{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.35);opacity:0}}
+#back-top{width:40px;height:40px;background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:1rem;backdrop-filter:blur(10px);transition:all .2s}
+#back-top:hover{background:rgba(255,255,255,.18)}
+.admin-lock{position:fixed;bottom:1.8rem;left:1.5rem;z-index:997;opacity:.1;transition:opacity .3s}
+.admin-lock:hover{opacity:.5}
+.admin-lock a{color:var(--muted);font-size:.82rem;text-decoration:none}
+
+/* WA MODAL */
+#wa-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9998;backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:1rem}
+#wa-ov.open{display:flex}
+#wa-pop{background:#021825;border:1px solid rgba(37,211,102,.3);border-radius:20px;width:100%;max-width:400px;max-height:92vh;overflow-y:auto;position:relative;box-shadow:0 28px 75px rgba(0,0,0,.8)}
+.wa-hdr{background:linear-gradient(135deg,#25d366,#128c7e);padding:1.3rem 1.5rem;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:.75rem}
+.wa-hdr svg{width:24px;height:24px;fill:#fff;flex-shrink:0}
+.wa-hdr strong{display:block;color:#fff;font-size:.95rem}
+.wa-hdr small{color:rgba(255,255,255,.72);font-size:.73rem}
+.wa-x{position:absolute;top:.85rem;right:.85rem;width:30px;height:30px;background:rgba(255,255,255,.18);border:none;border-radius:50%;color:#fff;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wa-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.wa-t{padding:.85rem;text-align:center;cursor:pointer;font-size:.78rem;font-weight:700;color:var(--muted);transition:all .2s;border-bottom:2px solid transparent;font-family:'DM Sans',sans-serif}
+.wa-t.on{color:#25d366;border-bottom-color:#25d366;background:rgba(37,211,102,.06)}
+.wa-pan{display:none;padding:1.3rem 1.5rem 1.5rem}
+.wa-pan.on{display:block}
+.wa-f{margin-bottom:.88rem}
+.wa-f label{display:block;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.28rem}
+.wa-f input,.wa-f select,.wa-f textarea{width:100%;padding:.65rem .88rem;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:9px;color:#fff;font-size:.83rem;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;transition:border .2s}
+.wa-f input:focus,.wa-f select:focus{border-color:#25d366}
+.wa-f select option{background:#021825}
+.wa-f textarea{resize:none;height:62px}
+.wa-send{width:100%;padding:.88rem;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:11px;color:#fff;font-size:.88rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;margin-top:.25rem;transition:opacity .2s;font-family:'DM Sans',sans-serif}
+.wa-send:hover{opacity:.88}
+.wa-send svg{width:17px;height:17px;fill:#fff}
+
+/* LISTING MODALS */
+.lst-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9990;backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem}
+.lst-ov.open{display:flex}
+.lst-modal{background:linear-gradient(160deg,#021825,#032c40);border:1px solid var(--border);border-radius:22px;width:100%;max-width:650px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 36px 90px rgba(0,0,0,.9)}
+.lst-hdr{padding:1.8rem 2rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;position:sticky;top:0;background:#021f30;z-index:5;border-radius:22px 22px 0 0}
+.lst-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:1.5px;color:#fff}
+.lst-sub{font-size:.77rem;color:var(--muted);margin-top:.18rem}
+.lst-x{width:34px;height:34px;background:rgba(255,255,255,.1);border:1px solid var(--border);border-radius:50%;color:#fff;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;border:none}
+.lst-x:hover{background:rgba(255,255,255,.22)}
+.lst-body{padding:1.4rem 1.8rem 1.8rem}
+.lst-item{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:1.3rem;margin-bottom:.9rem;transition:all .25s}
+.lst-item:hover{background:rgba(255,255,255,.07)}
+.lst-ibadge{display:inline-flex;align-items:center;gap:.3rem;padding:.16rem .6rem;border-radius:100px;font-size:.59rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.65rem}
+.badge-new{background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#6de08a}
+.badge-hot{background:rgba(255,120,60,.12);border:1px solid rgba(255,120,60,.3);color:#ff9070}
+.lst-ititle{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:#fff;letter-spacing:1px;margin-bottom:.3rem}
+.lst-idesc{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem}
+.lst-imeta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.9rem}
+.lst-tag{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:100px;padding:.18rem .65rem;font-size:.66rem;color:rgba(255,255,255,.55)}
+.lst-ibtn{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem 1.2rem;border-radius:100px;font-size:.76rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.ibtn-apply{background:rgba(37,211,102,.16);border:1.5px solid rgba(37,211,102,.4);color:#6de08a}
+.ibtn-apply:hover{background:rgba(37,211,102,.3)}
+.ibtn-enq{background:rgba(0,180,216,.16);border:1.5px solid rgba(0,180,216,.4);color:var(--cyan2)}
+.ibtn-enq:hover{background:rgba(0,180,216,.3)}
+.lst-empty{text-align:center;padding:2.5rem;color:var(--muted);font-size:.85rem}
+/* back to home btn in modal */
+.lst-home-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;text-decoration:none;margin-top:.5rem}
+.lst-home-btn:hover{background:rgba(255,255,255,.14);color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:.85rem 1.4rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  #hero{grid-template-columns:1fr;padding:3rem 1.4rem 3rem;min-height:auto}
+  .hero-right{display:none}
+  section{padding:3.5rem 1.4rem}
+  #why{grid-template-columns:1fr;padding:3.5rem 1.4rem}
+  .staff-grid,.book-wrap,.careers-wrap{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .q-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .lst-hdr,.lst-body{padding:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- VISITOR BANNER -->
+<div id="vbanner">
+  <span class="vb-lbl">I am looking for:</span>
+  <a href="#book" class="vb-btn vb-c">🏠 Home Staff / Cleaning</a>
+  <a href="#careers" class="vb-btn vb-j">💼 A Job in Qatar</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Santro Doha" onerror="this.style.display='none'"/>
+    <div class="nav-logo-text">SANTRO DOHA <span>CLEANING</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#homestaff">Home Staff</a></li>
+    <li><a href="#noticeboard">Listings</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#book" class="nav-btn nav-btn-client">🏠 Book Now</a>
+    <a href="#careers" class="nav-btn nav-btn-hire">💼 Join Us</a>
+  </div>
+  <button class="hamburger" onclick="openMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <div class="mob-inner">
+    <!-- Top bar -->
+    <div class="mob-top">
+      <div class="mob-brand">SANTRO DOHA <span>CLEANING</span></div>
+      <button class="mob-close" onclick="closeMob()">✕</button>
+    </div>
+
+    <!-- Nav links -->
+    <div class="mob-divider">Navigate</div>
+    <ul class="mob-links">
+      <li><a href="#services" onclick="closeMob()">🧹 Services</a></li>
+      <li><a href="#homestaff" onclick="closeMob()">👩‍🍳 Home Staff</a></li>
+      <li><a href="#why" onclick="closeMob()">⭐ Why Choose Us</a></li>
+      <li><a href="#reviews" onclick="closeMob()">💬 Reviews</a></li>
+      <li><a href="#quote" onclick="closeMob()">📋 Free Quote</a></li>
+    </ul>
+
+    <!-- Listings section -->
+    <div class="mob-divider">📢 Latest Listings</div>
+    <div class="mob-listings">
+      <button class="mob-listing-btn mob-listing-btn-job" onclick="closeMob();openListing('job')">
+        <div class="mob-listing-ico">💼</div>
+        <div class="mob-listing-text">
+          <strong>Job Listings</strong>
+          <span>View current job vacancies in Qatar</span>
+        </div>
+      </button>
+      <button class="mob-listing-btn mob-listing-btn-cli" onclick="closeMob();openListing('client')">
+        <div class="mob-listing-ico">🏠</div>
+        <div class="mob-listing-text">
+          <strong>Service Listings</strong>
+          <span>Available staff &amp; cleaning services</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="mob-cta">
+      <a href="#book" class="nav-btn nav-btn-client" onclick="closeMob()" style="text-align:center;padding:.75rem">🏠 Book Now</a>
+      <a href="#careers" class="nav-btn nav-btn-hire" onclick="closeMob()" style="text-align:center;padding:.75rem">💼 Join Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-badge reveal">🇶🇦 Qatar's Trusted Home Services</div>
+    <h1 class="hero-title reveal">YOUR HOME,<br><span class="accent">PERFECTLY</span><br>CARED FOR</h1>
+    <p class="hero-sub reveal">Professional housemaids, nannies and cleaning services across Qatar — vetted, trained and ready to serve your family.</p>
+    <div class="hero-btns reveal">
+      <a href="#book" class="btn-primary">Book a Service</a>
+      <a href="#quote" class="btn-ghost">Get Free Quote</a>
+    </div>
+    <div class="reveal" style="margin-top:1.1rem">
+      <button onclick="openListing('job')" style="display:inline-flex;align-items:center;gap:.55rem;padding:.62rem 1.5rem;border-radius:100px;background:rgba(37,211,102,.15);border:1.5px solid rgba(37,211,102,.45);color:#7ae89a;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;backdrop-filter:blur(18px);transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.3)" onmouseover="this.style.background='rgba(37,211,102,.28)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(37,211,102,.15)';this.style.transform='none'">💼 View Job Listings</button>
+      <button onclick="openListing('client')" style="display:inline-flex;align-items:center;gap:.55rem;padding:.62rem 1.5rem;border-radius:100px;background:rgba(0,180,216,.15);border:1.5px solid rgba(0,180,216,.45);color:#90e0ef;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;backdrop-filter:blur(18px);transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.3);margin-left:.6rem" onmouseover="this.style.background='rgba(0,180,216,.28)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(0,180,216,.15)';this.style.transform='none'">🏠 Service Listings</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card reveal">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--cyan);letter-spacing:1px;margin-bottom:.9rem">WHY FAMILIES CHOOSE US</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.83rem"><span style="color:#25d366;font-weight:700">✓</span> Fully vetted &amp; background-checked staff</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.83rem"><span style="color:#25d366;font-weight:700">✓</span> Filipino, Nepali, Indian, Bangladeshi &amp; more</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.83rem"><span style="color:#25d366;font-weight:700">✓</span> Live-In &amp; Live-Out options available</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.83rem"><span style="color:#25d366;font-weight:700">✓</span> Santro Doha provides Live-Out accommodation</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.83rem"><span style="color:#25d366;font-weight:700">✓</span> 24/7 WhatsApp support</li>
+      </ul>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-val">500+</div><div class="h-stat-lbl">Families Served</div></div>
+        <div class="h-stat"><div class="h-stat-val">4.9★</div><div class="h-stat-lbl">Avg Rating</div></div>
+        <div class="h-stat"><div class="h-stat-val">10+</div><div class="h-stat-lbl">Nationalities</div></div>
+        <div class="h-stat"><div class="h-stat-val">All</div><div class="h-stat-lbl">Qatar Regions</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="hero-badge reveal" style="background:rgba(0,180,216,.1);border-color:rgba(0,180,216,.3);color:var(--cyan2)">What We Offer</div>
+  <h2 class="section-title reveal">Our Services</h2>
+  <p class="section-sub reveal">Everything your home and family needs — professional cleaning to dedicated full-time home staff.</p>
+  <div class="svc-grid">
+    <div class="svc-card reveal"><div class="svc-icon">🏠</div><div class="svc-name">Residential Cleaning</div><p class="svc-desc">Thorough home cleaning by trained professionals. Kitchens, bathrooms, bedrooms — done right.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">🏢</div><div class="svc-name">Commercial Cleaning</div><p class="svc-desc">Office and commercial space cleaning. We handle all sizes from small offices to large facilities.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">👩‍🍳</div><div class="svc-name">Housemaid Placement</div><p class="svc-desc">Live-In or Live-Out housemaids matched to your family. All vetted, trained and ready to serve.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">👶</div><div class="svc-name">Nanny Placement</div><p class="svc-desc">Trusted, experienced nannies for childcare. Full-time Live-In or Live-Out arrangements available.</p></div>
+  </div>
+</section>
+
+<!-- HOME STAFF -->
+<section id="homestaff">
+  <div class="hero-badge reveal" style="background:rgba(0,180,216,.1);border-color:rgba(0,180,216,.3);color:var(--cyan2)">Home Staff</div>
+  <h2 class="section-title reveal" style="color:#fff">Housemaid &amp; Nanny Placement</h2>
+  <p class="section-sub reveal">Choose what works best — our staff are vetted, experienced, and ready.</p>
+  <div class="toggle-wrap">
+    <button class="ttab on" onclick="showStaff('livein',this)">🏠 Live-In</button>
+    <button class="ttab" onclick="showStaff('liveout',this)">🚗 Live-Out</button>
+  </div>
+  <div class="staff-grid" id="s-livein">
+    <div class="staff-card reveal"><h3>Housemaid — Live-In</h3><p>Your housemaid lives with your family, fully dedicated to your home and daily routine.</p><ul class="sf-list"><li>Accommodation provided by client</li><li>10 hours per day, 6 days a week</li><li>Full household management</li><li>Cooking, cleaning &amp; childcare support</li><li>All Qatar public holidays observed</li></ul></div>
+    <div class="staff-card reveal"><h3>Nanny — Live-In</h3><p>A dedicated live-in nanny always available for your family's peace of mind.</p><ul class="sf-list"><li>Infant &amp; child care specialists</li><li>10 hours per day schedule</li><li>Educational activities &amp; supervision</li><li>Accommodation by client family</li><li>Available 6 days a week</li></ul></div>
+  </div>
+  <div class="staff-grid" id="s-liveout" style="display:none">
+    <div class="staff-card reveal"><h3>Housemaid — Live-Out</h3><p>Your housemaid commutes daily. Santro Doha provides staff accommodation — no extra cost to you.</p><ul class="sf-list"><li>Free accommodation by Santro Doha</li><li>10 hours per day, 6 days a week</li><li>Reliable daily commute</li><li>All household tasks covered</li><li>Flexible scheduling available</li></ul></div>
+    <div class="staff-card reveal"><h3>Nanny — Live-Out</h3><p>Professional daily nanny. Staff stay in Santro Doha accommodation and come to you daily.</p><ul class="sf-list"><li>Santro Doha provides accommodation</li><li>Consistent daily schedule</li><li>Experienced childcare professionals</li><li>Infant through school-age care</li><li>Safe, vetted candidates only</li></ul></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div>
+    <div class="hero-badge reveal" style="background:rgba(201,150,58,.1);border-color:rgba(201,150,58,.3);color:var(--gold2)">Why Choose Us</div>
+    <h2 class="section-title reveal" style="color:#fff">Qatar Families Trust Us</h2>
+    <p class="section-sub reveal">We match the right people to the right homes, with care and professionalism.</p>
+    <div class="why-pts">
+      <div class="why-pt reveal"><div class="why-ico">🔍</div><div><h4>Fully Vetted Staff</h4><p>Every candidate is background-checked, reference-verified and trained before placement.</p></div></div>
+      <div class="why-pt reveal"><div class="why-ico">🤝</div><div><h4>Right Match Guarantee</h4><p>We replace any staff member free of charge if they are not the right fit for your family.</p></div></div>
+      <div class="why-pt reveal"><div class="why-ico">📱</div><div><h4>24/7 WhatsApp Support</h4><p>Our team is always reachable on WhatsApp for any questions or urgent needs.</p></div></div>
+      <div class="why-pt reveal"><div class="why-ico">🇶🇦</div><div><h4>Qatar-Wide Coverage</h4><p>All regions: Doha, Lusail, The Pearl, Al Rayyan, Al Wakrah and beyond.</p></div></div>
+    </div>
+  </div>
+  <div>
+    <div class="why-tiles">
+      <div class="why-tile reveal"><div style="font-size:1.4rem;margin-bottom:.35rem">👨‍👩‍👧‍👦</div><div class="why-tile-val">500+</div><div class="why-tile-lbl">Families Served</div></div>
+      <div class="why-tile reveal"><div style="font-size:1.4rem;margin-bottom:.35rem">⭐</div><div class="why-tile-val">4.9</div><div class="why-tile-lbl">Avg Rating</div></div>
+      <div class="why-tile reveal"><div style="font-size:1.4rem;margin-bottom:.35rem">🌍</div><div class="why-tile-val">10+</div><div class="why-tile-lbl">Nationalities</div></div>
+      <div class="why-tile reveal"><div style="font-size:1.4rem;margin-bottom:.35rem">🇶🇦</div><div class="why-tile-val">All</div><div class="why-tile-lbl">Qatar Regions</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NATIONALITIES -->
+<section id="nationals" style="padding:3.5rem 3.5rem;background:var(--deep);text-align:center">
+  <h2 class="section-title reveal" style="color:#fff;margin-bottom:.5rem">Our Staff Nationalities</h2>
+  <p class="section-sub reveal" style="margin:0 auto 0;text-align:center">Trusted and experienced staff from across Asia and Africa.</p>
+  <div class="flag-wrap">
+    <div class="flag-c reveal"><span>🇵🇭</span> Philippines</div>
+    <div class="flag-c reveal"><span>🇳🇵</span> Nepal</div>
+    <div class="flag-c reveal"><span>🇮🇳</span> India</div>
+    <div class="flag-c reveal"><span>🇧🇩</span> Bangladesh</div>
+    <div class="flag-c reveal"><span>🇵🇰</span> Pakistan</div>
+    <div class="flag-c reveal"><span>🌍</span> Africa</div>
+  </div>
+</section>
+
+<!-- NOTICE BOARD -->
+<section id="noticeboard">
+  <div style="text-align:center;margin-bottom:2.2rem">
+    <div class="hero-badge reveal" style="background:rgba(201,150,58,.1);border-color:rgba(201,150,58,.3);color:var(--gold2);margin:0 auto 1rem">📋 Live Updates</div>
+    <h2 class="section-title reveal" style="color:#fff;text-align:center">Latest from Santro Doha</h2>
+    <p class="section-sub reveal" style="margin:0 auto 2rem;text-align:center">Current job vacancies &amp; service announcements — posted by our team.</p>
+    <div class="nb-tabs">
+      <button class="nb-tab nbon" id="nbt-all" onclick="nbTab('all')">📋 All Posts</button>
+      <button class="nb-tab" id="nbt-job" onclick="nbTab('job')">💼 Job Vacancies</button>
+      <button class="nb-tab" id="nbt-client" onclick="nbTab('client')">🏠 Client Posts</button>
+    </div>
+  </div>
+  <div class="nb-grid" id="nb-grid"><div class="nb-empty">Loading... ⏳</div></div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote">
+  <div class="quote-wrap">
+    <div style="text-align:center;margin-bottom:2rem">
+      <div class="hero-badge reveal" style="margin:0 auto 1rem;background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.3);color:#00d4aa">💬 Instant via WhatsApp</div>
+      <h2 class="section-title reveal" style="color:#fff;text-align:center">Get a Free Quote</h2>
+      <p class="section-sub reveal" style="margin:0 auto;text-align:center">Fill in your details and we'll send your personalised quote on WhatsApp within minutes.</p>
+    </div>
+    <div class="q-card reveal">
+      <div class="q-grid">
+        <div class="q-field"><label class="q-lbl">Your Name</label><input class="q-input" id="qName" placeholder="e.g. Ahmed Al-Mansouri"/></div>
+        <div class="q-field"><label class="q-lbl">Phone / WhatsApp</label><input class="q-input" id="qPhone" placeholder="+974 XXXX XXXX"/></div>
+        <div class="q-field"><label class="q-lbl">Service Needed</label>
+          <select class="q-select" id="qService"><option value="">Select service...</option><option>Housemaid — Live-In</option><option>Housemaid — Live-Out</option><option>Nanny — Live-In</option><option>Nanny — Live-Out</option><option>Residential Cleaning</option><option>Commercial Cleaning</option></select>
+        </div>
+        <div class="q-field"><label class="q-lbl">Location in Qatar</label>
+          <select class="q-select" id="qLoc"><option value="">Select area...</option><option>Doha</option><option>West Bay</option><option>The Pearl</option><option>Lusail City</option><option>Al Rayyan</option><option>Al Wakrah</option><option>Al Khor</option><option>Al Daayen</option><option>Umm Salal</option><option>Other</option></select>
+        </div>
+        <div class="q-field full"><label class="q-lbl">Special Requests (Optional)</label><textarea class="q-textarea" id="qNotes" placeholder="e.g. 3 children, villa, need cooking included..."></textarea></div>
+      </div>
+      <button class="q-submit" onclick="sendQuoteWA()">
+        <svg width="17" height="17" viewBox="0 0 32 32" fill="#25d366"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.72.7 5.28 1.92 7.5L.5 31.5l8.28-2.16A15.43 15.43 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm7.52 18c-.41-.2-2.44-1.2-2.82-1.34-.38-.14-.65-.2-.93.2-.27.4-1.06 1.34-1.3 1.62-.24.27-.48.3-.89.1-.41-.2-1.74-.64-3.3-2.04-1.22-1.09-2.04-2.43-2.28-2.84-.24-.41-.03-.63.18-.84.18-.18.41-.48.62-.72.2-.24.27-.41.41-.68.14-.27.07-.51-.03-.72-.1-.2-.93-2.24-1.27-3.07-.34-.8-.68-.7-.93-.7h-.79c-.27 0-.72.1-1.1.51-.38.41-1.44 1.41-1.44 3.44s1.48 3.99 1.68 4.27c.2.27 2.9 4.43 7.03 6.21.98.42 1.75.67 2.34.86.99.31 1.88.27 2.59.16.79-.12 2.44-.99 2.79-1.96.34-.96.34-1.78.24-1.96-.1-.17-.38-.27-.79-.48z"/></svg>
+        Send to WhatsApp &amp; Get My Free Quote →
+      </button>
+      <div style="text-align:center;font-size:.71rem;color:var(--muted);margin-top:.75rem">We reply within minutes 🇶🇦 No obligation. 100% Free.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="book-h">
+    <div class="hero-badge reveal" style="margin:0 auto 1rem">📅 Book a Service</div>
+    <h2 class="section-title reveal" style="color:#fff">Book Now</h2>
+    <p class="section-sub reveal" style="margin:0 auto">Fill in the form and we'll confirm via WhatsApp.</p>
+  </div>
+  <div class="book-wrap">
+    <div class="book-form reveal">
+      <h3>🏠 Client Booking</h3>
+      <p>For housemaid, nanny or cleaning services</p>
+      <div class="f-group"><label class="f-lbl">Full Name</label><input class="f-inp" id="bName" placeholder="Your full name"/></div>
+      <div class="f-group"><label class="f-lbl">Phone / WhatsApp</label><input class="f-inp" id="bPhone" placeholder="+974 XXXX XXXX"/></div>
+      <div class="f-group"><label class="f-lbl">Service Needed</label><select class="f-sel" id="bService"><option value="">Select...</option><option>Housemaid — Live-In</option><option>Housemaid — Live-Out</option><option>Nanny — Live-In</option><option>Nanny — Live-Out</option><option>Residential Cleaning</option><option>Commercial Cleaning</option></select></div>
+      <div class="f-group"><label class="f-lbl">Location in Qatar</label><input class="f-inp" id="bLoc" placeholder="e.g. West Bay, Lusail..."/></div>
+      <div class="f-group"><label class="f-lbl">Preferred Start Date</label><input class="f-inp" id="bDate" type="date"/></div>
+      <div class="f-group"><label class="f-lbl">Additional Notes</label><textarea class="f-txt" id="bNotes" placeholder="Any special requirements..."></textarea></div>
+      <button class="f-sub" onclick="sendBookingWA()">📲 Send Booking via WhatsApp</button>
+    </div>
+    <div class="book-form reveal">
+      <h3>📋 What Happens Next?</h3>
+      <p>After you submit, here's what to expect:</p>
+      <ul class="sf-list" style="margin-top:1rem">
+        <li>We receive your booking on WhatsApp</li>
+        <li>We confirm availability within minutes</li>
+        <li>We send you a quotation document</li>
+        <li>You review and agree to terms</li>
+        <li>We match you with the right staff</li>
+        <li>Service begins on your chosen date</li>
+      </ul>
+      <div style="margin-top:1.8rem;padding:1.1rem;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px">
+        <div style="font-size:.75rem;color:var(--muted);margin-bottom:.4rem">📱 Direct WhatsApp</div>
+        <a href="https://wa.me/97450928969" target="_blank" style="color:#25d366;font-weight:700;text-decoration:none;font-size:.88rem;display:block">+974 50928969</a>
+        <a href="https://wa.me/97451354556" target="_blank" style="color:#25d366;font-weight:700;text-decoration:none;font-size:.88rem;display:block;margin-top:.2rem">+974 51354556</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="hero-badge reveal" style="background:rgba(201,150,58,.1);border-color:rgba(201,150,58,.3);color:var(--gold)">⭐ Reviews</div>
+  <h2 class="section-title reveal" style="color:#1a1a2e">What Families Say</h2>
+  <p class="section-sub reveal" style="color:#555">Real reviews from families across Qatar who trust Santro Doha Cleaning.</p>
+  <div class="rev-grid">
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">Santro Doha placed a wonderful live-in housemaid for our villa in West Bay. She is professional, trustworthy, and our home has never been so well-maintained!</p><div class="reviewer"><div class="rev-av">FA</div><div><div class="rev-name">Fatima A*******</div><div class="rev-loc">Live-In Housemaid · West Bay 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">We hired a live-out nanny for our two children. She arrives on time every morning and the schedule works perfectly for our busy family in Lusail.</p><div class="reviewer"><div class="rev-av">KM</div><div><div class="rev-name">Khalid &amp; Maryam A**</div><div class="rev-loc">Live-Out Nanny · Lusail City 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">Our housemaid has been with us almost a year. She is part of our family. Professional, caring and incredibly hardworking. Thank you Santro Doha!</p><div class="reviewer"><div class="rev-av">SA</div><div><div class="rev-name">Sara A********</div><div class="rev-loc">Live-In Housemaid · The Pearl 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">Our nanny from Santro Doha is amazing with our baby. Very patient, loving and responsible. The process was smooth and the team was very helpful.</p><div class="reviewer"><div class="rev-av">MA</div><div><div class="rev-name">Mohammed A*****</div><div class="rev-loc">Live-In Nanny · Al Waab 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">Very responsive team. They found us a great housemaid within days. She keeps our home spotless and is wonderful with our kids. Best decision we made!</p><div class="reviewer"><div class="rev-av">HA</div><div><div class="rev-name">Hessa A*******</div><div class="rev-loc">Live-In Housemaid · Al Rayyan 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">I was worried about finding a trustworthy nanny but Santro Doha made it so easy. All staff are verified and trained. Our nanny is gentle and my daughter loves her!</p><div class="reviewer"><div class="rev-av">LA</div><div><div class="rev-name">Layla A*********</div><div class="rev-loc">Live-Out Nanny · Msheireb 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">Santro Doha found us a fantastic nanny in less than a week. She handles our twins with so much patience and love. Truly a five star service.</p><div class="reviewer"><div class="rev-av">DA</div><div><div class="rev-name">Dana &amp; Tariq A*</div><div class="rev-loc">Live-In Nanny · The Pearl 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">What makes Santro Doha special is how they care about matching the right person. Our housemaid has been with us 8 months and we couldn't be happier.</p><div class="reviewer"><div class="rev-av">YA</div><div><div class="rev-name">Yousef A**</div><div class="rev-loc">Live-In Housemaid · Lusail City 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">The best cleaning company in Qatar. Our office was cleaned to an incredibly high standard. Staff were friendly and finished ahead of schedule.</p><div class="reviewer"><div class="rev-av">SA</div><div><div class="rev-name">Salma A*</div><div class="rev-loc">Office Cleaning · C-Ring Road 🇶🇦</div></div></div></div>
+    <div class="rev-card reveal"><div class="stars">★★★★★</div><p class="rev-text">We have been clients of Santro Doha for over a year. Every interaction has been professional. Our live-in nanny is brilliant and our children are so happy.</p><div class="reviewer"><div class="rev-av">OA</div><div><div class="rev-name">Omar &amp; Fatima A*</div><div class="rev-loc">Live-In Nanny · Umm Salal 🇶🇦</div></div></div></div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section id="careers">
+  <div class="hero-badge reveal" style="background:rgba(201,150,58,.1);border-color:rgba(201,150,58,.3);color:var(--gold2)">💼 Join Our Team</div>
+  <h2 class="section-title reveal" style="color:#fff">Work With Us</h2>
+  <p class="section-sub reveal">Always looking for motivated, caring people. Full-Time only — Housemaid &amp; Nanny roles in Qatar.</p>
+  <div class="careers-wrap">
+    <div>
+      <div class="perks-grid">
+        <div class="perk reveal"><div class="perk-ico">💰</div><div class="perk-nm">Competitive Pay</div><div class="perk-ds">Fair monthly salary, on time</div></div>
+        <div class="perk reveal"><div class="perk-ico">🏠</div><div class="perk-nm">Free Accommodation</div><div class="perk-ds">Live-Out staff housed by us</div></div>
+        <div class="perk reveal"><div class="perk-ico">🚗</div><div class="perk-nm">Transport Covered</div><div class="perk-ds">We arrange daily transport</div></div>
+        <div class="perk reveal"><div class="perk-ico">🏥</div><div class="perk-nm">Health Benefits</div><div class="perk-ds">Basic health coverage</div></div>
+        <div class="perk reveal"><div class="perk-ico">🕐</div><div class="perk-nm">Flexible Hours</div><div class="perk-ds">10hrs/day, 6 days/week</div></div>
+        <div class="perk reveal"><div class="perk-ico">📈</div><div class="perk-nm">Growth Path</div><div class="perk-ds">Senior roles available</div></div>
+      </div>
+    </div>
+    <div class="apply-form reveal">
+      <h3>Apply Now</h3>
+      <p>Full-Time · Housemaid &amp; Nanny roles only</p>
+      <div class="f-group"><label class="f-lbl">Full Name</label><input class="f-inp" id="aName" placeholder="Your full name"/></div>
+      <div class="f-group"><label class="f-lbl">Nationality</label><select class="f-sel" id="aNat"><option value="">Select...</option><option>Filipino</option><option>Nepali</option><option>Indian</option><option>Bangladeshi</option><option>Pakistani</option><option>African</option><option>Other</option></select></div>
+      <div class="f-group"><label class="f-lbl">Role Applying For</label><select class="f-sel" id="aRole"><option value="">Select...</option><option>Housemaid</option><option>Nanny</option></select></div>
+      <div class="f-group"><label class="f-lbl">Experience</label><select class="f-sel" id="aExp"><option value="">Select...</option><option>No experience (willing to train)</option><option>1-2 years</option><option>3-5 years</option><option>5+ years</option></select></div>
+      <div class="f-group"><label class="f-lbl">Current Location</label><input class="f-inp" id="aLoc" placeholder="e.g. Doha or Manila, Philippines"/></div>
+      <button class="f-sub" onclick="sendApplyWA()">📲 Apply via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand-name">SANTRO DOHA <span>CLEANING</span></div>
+      <p class="ft-brand-desc">Qatar's trusted cleaning, housemaid and nanny service — making your home shine and your family thrive.</p>
+      <div style="display:inline-flex;align-items:center;gap:.45rem;background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.2);border-radius:100px;padding:.3rem .9rem;font-size:.7rem;color:var(--cyan2)">🇶🇦 Proudly Serving Qatar</div>
+    </div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">Residential Cleaning</a></li><li><a href="#services">Commercial Cleaning</a></li><li><a href="#homestaff">Housemaid Placement</a></li><li><a href="#homestaff">Nanny Placement</a></li></ul></div>
+    <div class="ft-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#careers">Careers</a></li><li><a href="#quote">Get a Quote</a></li></ul></div>
+    <div class="ft-col"><h4>Contact — Qatar</h4><ul><li><a href="tel:+97450928969">+974 50928969</a></li><li><a href="tel:+97451354556">+974 51354556</a></li><li><a href="#">Doha, Qatar</a></li><li><a href="#">Sun–Thu: 7am – 7pm</a></li></ul></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2025 Santro Doha Cleaning. All rights reserved.</span>
+    <span><a href="#book">Book a Service</a> · <a href="#careers">Join the Team</a></span>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<div id="wa-float">
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <a id="wa-btn" href="#" onclick="openWa(event)" aria-label="Chat">
+    <div id="wa-pulse"></div>
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.72.7 5.28 1.92 7.5L.5 31.5l8.28-2.16A15.43 15.43 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm0 28.3a13.7 13.7 0 01-7.02-1.93l-.5-.3-5.18 1.36 1.38-5.04-.33-.52A13.72 13.72 0 1116 28.8zm7.52-10.3c-.41-.2-2.44-1.2-2.82-1.34-.38-.14-.65-.2-.93.2-.27.4-1.06 1.34-1.3 1.62-.24.27-.48.3-.89.1-.41-.2-1.74-.64-3.3-2.04-1.22-1.09-2.04-2.43-2.28-2.84-.24-.41-.03-.63.18-.84.18-.18.41-.48.62-.72.2-.24.27-.41.41-.68.14-.27.07-.51-.03-.72-.1-.2-.93-2.24-1.27-3.07-.34-.8-.68-.7-.93-.7h-.79c-.27 0-.72.1-1.1.51-.38.41-1.44 1.41-1.44 3.44s1.48 3.99 1.68 4.27c.2.27 2.9 4.43 7.03 6.21.98.42 1.75.67 2.34.86.99.31 1.88.27 2.59.16.79-.12 2.44-.99 2.79-1.96.34-.96.34-1.78.24-1.96-.1-.17-.38-.27-.79-.48z"/></svg>
+  </a>
+</div>
+
+<div class="admin-lock"><a href="elite-admin-panel.html">🔒</a></div>
+
+<!-- WA MODAL -->
+<div id="wa-ov" onclick="closeWaOut(event)">
+  <div id="wa-pop">
+    <div class="wa-hdr">
+      <svg viewBox="0 0 32 32"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.72.7 5.28 1.92 7.5L.5 31.5l8.28-2.16A15.43 15.43 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm7.52 18c-.41-.2-2.44-1.2-2.82-1.34-.38-.14-.65-.2-.93.2-.27.4-1.06 1.34-1.3 1.62-.24.27-.48.3-.89.1-.41-.2-1.74-.64-3.3-2.04-1.22-1.09-2.04-2.43-2.28-2.84-.24-.41-.03-.63.18-.84.18-.18.41-.48.62-.72.2-.24.27-.41.41-.68.14-.27.07-.51-.03-.72-.1-.2-.93-2.24-1.27-3.07-.34-.8-.68-.7-.93-.7h-.79c-.27 0-.72.1-1.1.51-.38.41-1.44 1.41-1.44 3.44s1.48 3.99 1.68 4.27c.2.27 2.9 4.43 7.03 6.21.98.42 1.75.67 2.34.86.99.31 1.88.27 2.59.16.79-.12 2.44-.99 2.79-1.96.34-.96.34-1.78.24-1.96-.1-.17-.38-.27-.79-.48z"/></svg>
+      <div><strong>Santro Doha Cleaning</strong><small>We reply within minutes 🇶🇦</small></div>
+    </div>
+    <button class="wa-x" onclick="closeWa()">✕</button>
+    <div class="wa-tabs">
+      <div class="wa-t on" onclick="waTab('client')">🏠 I am a Client</div>
+      <div class="wa-t" onclick="waTab('job')">💼 Job Seeker</div>
+    </div>
+    <div class="wa-pan on" id="wp-client">
+      <div class="wa-f"><label>Your Name</label><input type="text" id="wc-n" placeholder="e.g. Ahmed Al-Mansouri"/></div>
+      <div class="wa-f"><label>Location in Qatar</label><input type="text" id="wc-l" placeholder="e.g. West Bay, Lusail..."/></div>
+      <div class="wa-f"><label>Service You Need</label><select id="wc-s"><option value="">Select service...</option><option>Housemaid — Live-In</option><option>Housemaid — Live-Out</option><option>Nanny — Live-In</option><option>Nanny — Live-Out</option><option>Residential Cleaning</option><option>Commercial Cleaning</option></select></div>
+      <div class="wa-f"><label>Additional Details (Optional)</label><textarea id="wc-d" placeholder="e.g. number of children, villa or apartment..."></textarea></div>
+      <button class="wa-send" onclick="sendWaClient()"><svg viewBox="0 0 32 32"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.72.7 5.28 1.92 7.5L.5 31.5l8.28-2.16A15.43 15.43 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm7.52 18c-.41-.2-2.44-1.2-2.82-1.34-.38-.14-.65-.2-.93.2-.27.4-1.06 1.34-1.3 1.62-.24.27-.48.3-.89.1-.41-.2-1.74-.64-3.3-2.04-1.22-1.09-2.04-2.43-2.28-2.84-.24-.41-.03-.63.18-.84.18-.18.41-.48.62-.72.2-.24.27-.41.41-.68.14-.27.07-.51-.03-.72-.1-.2-.93-2.24-1.27-3.07-.34-.8-.68-.7-.93-.7h-.79c-.27 0-.72.1-1.1.51-.38.41-1.44 1.41-1.44 3.44s1.48 3.99 1.68 4.27c.2.27 2.9 4.43 7.03 6.21.98.42 1.75.67 2.34.86.99.31 1.88.27 2.59.16.79-.12 2.44-.99 2.79-1.96.34-.96.34-1.78.24-1.96-.1-.17-.38-.27-.79-.48z"/></svg>Send to WhatsApp</button>
+    </div>
+    <div class="wa-pan" id="wp-job">
+      <div class="wa-f"><label>Your Full Name</label><input type="text" id="wj-n" placeholder="e.g. Maria Santos"/></div>
+      <div class="wa-f"><label>Nationality</label><select id="wj-nat"><option value="">Select...</option><option>Filipino</option><option>Nepali</option><option>Indian</option><option>Bangladeshi</option><option>Pakistani</option><option>African</option><option>Other</option></select></div>
+      <div class="wa-f"><label>Role Applying For</label><select id="wj-r"><option value="">Select...</option><option>Housemaid</option><option>Nanny</option></select></div>
+      <div class="wa-f"><label>Experience</label><select id="wj-e"><option value="">Select...</option><option>No experience</option><option>1-2 years</option><option>3-5 years</option><option>5+ years</option></select></div>
+      <div class="wa-f"><label>Current Location</label><input type="text" id="wj-l" placeholder="e.g. Doha or Manila, Philippines"/></div>
+      <button class="wa-send" onclick="sendWaJob()"><svg viewBox="0 0 32 32"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.72.7 5.28 1.92 7.5L.5 31.5l8.28-2.16A15.43 15.43 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm7.52 18c-.41-.2-2.44-1.2-2.82-1.34-.38-.14-.65-.2-.93.2-.27.4-1.06 1.34-1.3 1.62-.24.27-.48.3-.89.1-.41-.2-1.74-.64-3.3-2.04-1.22-1.09-2.04-2.43-2.28-2.84-.24-.41-.03-.63.18-.84.18-.18.41-.48.62-.72.2-.24.27-.41.41-.68.14-.27.07-.51-.03-.72-.1-.2-.93-2.24-1.27-3.07-.34-.8-.68-.7-.93-.7h-.79c-.27 0-.72.1-1.1.51-.38.41-1.44 1.41-1.44 3.44s1.48 3.99 1.68 4.27c.2.27 2.9 4.43 7.03 6.21.98.42 1.75.67 2.34.86.99.31 1.88.27 2.59.16.79-.12 2.44-.99 2.79-1.96.34-.96.34-1.78.24-1.96-.1-.17-.38-.27-.79-.48z"/></svg>Apply via WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- JOB LISTING MODAL -->
+<div class="lst-ov" id="modal-job" onclick="closeLstOut(event,'job')">
+  <div class="lst-modal" onclick="event.stopPropagation()">
+    <div class="lst-hdr">
+      <div>
+        <div class="lst-title">💼 Job Vacancies</div>
+        <div class="lst-sub">Current openings at Santro Doha Cleaning — Qatar</div>
+      </div>
+      <button class="lst-x" onclick="closeListing('job')">✕</button>
+    </div>
+    <div class="lst-body" id="job-list-body"></div>
+  </div>
+</div>
+
+<!-- CLIENT LISTING MODAL -->
+<div class="lst-ov" id="modal-client" onclick="closeLstOut(event,'client')">
+  <div class="lst-modal" onclick="event.stopPropagation()">
+    <div class="lst-hdr">
+      <div>
+        <div class="lst-title">🏠 Services Available</div>
+        <div class="lst-sub">Current availability &amp; service announcements</div>
+      </div>
+      <button class="lst-x" onclick="closeListing('client')">✕</button>
+    </div>
+    <div class="lst-body" id="client-list-body"></div>
+  </div>
+</div>
+
+<script>
+document.body.classList.add('js-ready');
+var WA='97450928969';
+
+// Scroll reveals
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+// Back to top
+window.addEventListener('scroll',function(){
+  var b=document.getElementById('back-top');
+  if(b) b.style.display=window.scrollY>400?'flex':'none';
+});
+
+// Mobile menu
+function openMob(){document.getElementById('mobile-menu').classList.add('open');document.body.style.overflow='hidden'}
+function closeMob(){document.getElementById('mobile-menu').classList.remove('open');document.body.style.overflow=''}
+
+// Staff toggle
+function showStaff(type,btn){
+  document.getElementById('s-livein').style.display=type==='livein'?'grid':'none';
+  document.getElementById('s-liveout').style.display=type==='liveout'?'grid':'none';
+  document.querySelectorAll('.ttab').forEach(function(t){t.classList.remove('on')});
+  btn.classList.add('on');
+}
+
+// WA modal
+function openWa(e){e.preventDefault();document.getElementById('wa-ov').classList.add('open');document.body.style.overflow='hidden'}
+function closeWa(){document.getElementById('wa-ov').classList.remove('open');document.body.style.overflow=''}
+function closeWaOut(e){if(e.target===document.getElementById('wa-ov'))closeWa()}
+function waTab(t){
+  document.querySelectorAll('.wa-t').forEach(function(x){x.classList.remove('on')});
+  document.querySelectorAll('.wa-pan').forEach(function(x){x.classList.remove('on')});
+  if(t==='client'){document.querySelectorAll('.wa-t')[0].classList.add('on');document.getElementById('wp-client').classList.add('on')}
+  else{document.querySelectorAll('.wa-t')[1].classList.add('on');document.getElementById('wp-job').classList.add('on')}
+}
+function enc(v){return encodeURIComponent(v)}
+function sendWaClient(){
+  var n=document.getElementById('wc-n').value.trim(),l=document.getElementById('wc-l').value.trim(),s=document.getElementById('wc-s').value,d=document.getElementById('wc-d').value.trim();
+  var m='Hello Santro Doha! I am a *CLIENT* looking for your services.';
+  if(n)m+='%0A%0A👤 *Name:* '+enc(n);
+  if(l)m+='%0A📍 *Location:* '+enc(l);
+  if(s)m+='%0A🧹 *Service:* '+enc(s);
+  if(d)m+='%0A📝 *Details:* '+enc(d);
+  m+='%0A%0APlease contact me. Thank you! 🇶🇦';
+  window.open('https://wa.me/'+WA+'?text='+m,'_blank');closeWa();
+}
+function sendWaJob(){
+  var n=document.getElementById('wj-n').value.trim(),nat=document.getElementById('wj-nat').value,r=document.getElementById('wj-r').value,e=document.getElementById('wj-e').value,l=document.getElementById('wj-l').value.trim();
+  var m='Hello Santro Doha! I am a *JOB SEEKER*.';
+  if(n)m+='%0A%0A👤 *Name:* '+enc(n);
+  if(nat)m+='%0A🌍 *Nationality:* '+enc(nat);
+  if(r)m+='%0A💼 *Role:* '+enc(r);
+  if(e)m+='%0A📋 *Experience:* '+enc(e);
+  if(l)m+='%0A📍 *Location:* '+enc(l);
+  m+='%0A%0AI would like to apply. Thank you! 🙏';
+  window.open('https://wa.me/'+WA+'?text='+m,'_blank');closeWa();
+}
+
+// Quote WA
+function sendQuoteWA(){
+  var n=document.getElementById('qName').value.trim(),p=document.getElementById('qPhone').value.trim(),s=document.getElementById('qService').value,l=document.getElementById('qLoc').value,nt=document.getElementById('qNotes').value.trim();
+  var m='Hello Santro Doha! I would like a *FREE QUOTE* 🧹';
+  if(n)m+='%0A%0A👤 *Name:* '+enc(n);
+  if(p)m+='%0A📱 *Phone:* '+enc(p);
+  if(s)m+='%0A🧹 *Service:* '+enc(s);
+  if(l)m+='%0A📍 *Location:* '+enc(l);
+  if(nt)m+='%0A📝 *Notes:* '+enc(nt);
+  m+='%0A%0APlease send me your best price. Thank you! 🇶🇦';
+  window.open('https://wa.me/'+WA+'?text='+m,'_blank');
+}
+
+// Booking WA
+function sendBookingWA(){
+  var n=document.getElementById('bName').value.trim(),p=document.getElementById('bPhone').value.trim(),s=document.getElementById('bService').value,l=document.getElementById('bLoc').value.trim(),d=document.getElementById('bDate').value,nt=document.getElementById('bNotes').value.trim();
+  var m='Hello Santro Doha! I would like to *BOOK* a service 📅';
+  if(n)m+='%0A%0A👤 *Name:* '+enc(n);
+  if(p)m+='%0A📱 *Phone:* '+enc(p);
+  if(s)m+='%0A🧹 *Service:* '+enc(s);
+  if(l)m+='%0A📍 *Location:* '+enc(l);
+  if(d)m+='%0A📅 *Start Date:* '+enc(d);
+  if(nt)m+='%0A📝 *Notes:* '+enc(nt);
+  m+='%0A%0APlease confirm availability. Thank you! 🇶🇦';
+  window.open('https://wa.me/'+WA+'?text='+m,'_blank');
+}
+
+// Apply WA
+function sendApplyWA(){
+  var n=document.getElementById('aName').value.trim(),nat=document.getElementById('aNat').value,r=document.getElementById('aRole').value,e=document.getElementById('aExp').value,l=document.getElementById('aLoc').value.trim();
+  var m='Hello Santro Doha! I would like to *APPLY* for a position 💼';
+  if(n)m+='%0A%0A👤 *Name:* '+enc(n);
+  if(nat)m+='%0A🌍 *Nationality:* '+enc(nat);
+  if(r)m+='%0A💼 *Role:* '+enc(r);
+  if(e)m+='%0A📋 *Experience:* '+enc(e);
+  if(l)m+='%0A📍 *Location:* '+enc(l);
+  m+='%0A%0APlease consider my application. Thank you! 🙏';
+  window.open('https://wa.me/'+WA+'?text='+m,'_blank');
+}
+
+// Notice board
+var nbFilter='all';
+function nbTab(f){
+  nbFilter=f;
+  document.querySelectorAll('.nb-tab').forEach(function(t){t.classList.remove('nbon')});
+  document.getElementById('nbt-'+f).classList.add('nbon');
+  renderNb();
+}
+function renderNb(){
+  var posts=JSON.parse(localStorage.getItem('santro_nb_posts')||'[]');
+  var grid=document.getElementById('nb-grid');
+  var filtered=nbFilter==='all'?posts:posts.filter(function(p){return p.type===nbFilter});
+  if(!filtered.length){
+    var defaults=nbFilter==='all'||nbFilter==='job'?[
+      {type:'job',title:'Housemaid Wanted — Live-In',desc:'Looking for experienced Filipino housemaid for a family in West Bay. Accommodation provided. Start ASAP.',date:'Today',link:'#careers'},
+      {type:'job',title:'Nanny Needed — Live-Out',desc:'Family in Lusail seeking experienced nanny for 2 children aged 3 and 6. Daily schedule, Santro Doha accommodation.',date:'Today',link:'#careers'},
+    ]:[];
+    if(nbFilter==='all'||nbFilter==='client') defaults.push({type:'client',title:'Live-In Housemaid Available',desc:'We have a qualified, experienced housemaid available for immediate placement in Qatar. Contact us to enquire.',date:'Today',link:'#book'});
+    if(!defaults.length){grid.innerHTML='<div class="nb-empty">No posts yet. Check back soon! 📋</div>';return}
+    filtered=defaults;
+  }
+  grid.innerHTML=filtered.map(function(p){
+    var isJob=p.type==='job';
+    return '<div class="nb-card">'+
+      '<span class="nb-badge '+(isJob?'nb-badge-job':'nb-badge-client')+'">'+(isJob?'💼 Job Vacancy':'🏠 Client Post')+'</span>'+
+      '<div class="nb-card-title">'+p.title+'</div>'+
+      '<div class="nb-card-desc">'+p.desc+'</div>'+
+      '<div class="nb-card-foot">'+
+        '<span class="nb-date">'+(p.date||'')+'</span>'+
+        '<a href="'+(p.link||'#')+'" class="nb-act">'+(isJob?'Apply Now →':'Enquire →')+'</a>'+
+      '</div></div>';
+  }).join('');
+}
+renderNb();
+
+// Listing modals
+function openListing(type){
+  var modal=document.getElementById('modal-'+type);
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+  renderListing(type);
+}
+function closeListing(type){
+  document.getElementById('modal-'+type).classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeLstOut(e,type){
+  if(e.target===document.getElementById('modal-'+type))closeListing(type);
+}
+function renderListing(type){
+  var bodyId=type+'-list-body';
+  var body=document.getElementById(bodyId);
+  var posts=JSON.parse(localStorage.getItem('santro_nb_posts')||'[]');
+  var filtered=posts.filter(function(p){return p.type===type});
+  
+  // Default items if no posts
+  var items=[];
+  if(type==='job'){
+    items=filtered.length?filtered:[
+      {title:'Housemaid — Live-In',desc:'Experienced housemaid needed for a family in West Bay. 10hrs/day, 6 days/week. Accommodation provided by client family. Filipino/Nepali preferred.',tags:['Live-In','West Bay','Full-Time'],badge:'badge-hot',link:'#careers'},
+      {title:'Nanny — Live-Out',desc:'Family in Lusail City seeking a gentle, experienced nanny for 2 young children. Santro Doha provides daily accommodation and transport.',tags:['Live-Out','Lusail City','Full-Time','Kids'],badge:'badge-new',link:'#careers'},
+      {title:'Housemaid — Live-Out',desc:'Looking for a reliable housemaid for daily household duties in Al Rayyan. 10 hours per day, Monday to Saturday. Free accommodation provided.',tags:['Live-Out','Al Rayyan','Full-Time'],badge:'badge-new',link:'#careers'},
+    ];
+  } else {
+    items=filtered.length?filtered:[
+      {title:'Live-In Housemaid Available',desc:'Qualified Filipino housemaid available for immediate placement. 3 years experience, great references. Contact us to arrange a meeting.',tags:['Available Now','Filipino','Experienced'],badge:'badge-hot',link:'#book'},
+      {title:'Nanny Available — Live-In or Out',desc:'Professional nanny with childcare certification available. Experience with infants and toddlers. Can start within 1 week.',tags:['Available','Certified','Infant Care'],badge:'badge-new',link:'#book'},
+      {title:'Regular Cleaning Package',desc:'Weekly or bi-weekly residential cleaning service now available across Doha and surrounding areas. Professional team, eco-friendly products.',tags:['Doha','Weekly','Bi-Weekly'],badge:'badge-new',link:'#book'},
+    ];
+  }
+  
+  var isJob=type==='job';
+  body.innerHTML=items.map(function(item){
+    return '<div class="lst-item">'+
+      '<span class="lst-ibadge '+(item.badge||'badge-new')+'">'+(item.badge==='badge-hot'?'🔥 Hot':'✨ New')+'</span>'+
+      '<div class="lst-ititle">'+(item.title||'')+'</div>'+
+      '<div class="lst-idesc">'+(item.desc||'')+'</div>'+
+      '<div class="lst-imeta">'+((item.tags||[]).map(function(t){return '<span class="lst-tag">'+t+'</span>'}).join(''))+'</div>'+
+      '<div style="display:flex;align-items:center;gap:.7rem;flex-wrap:wrap">'+
+        '<button class="lst-ibtn '+(isJob?'ibtn-apply':'ibtn-enq')+'" onclick="'+(isJob?'applyJob':'enquireClient')+'(''+encodeURIComponent(item.title)+'')">'+(isJob?'💼 Apply via WhatsApp →':'🏠 Enquire via WhatsApp →')+'</button>'+
+        '<a href="'+(item.link||'#')+'" class="lst-ibtn" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6)" onclick="closeListing(''+type+'')">← Back to Website</a>'+
+      '</div></div>';
+  }).join('');
+}
+function applyJob(title){
+  var t=decodeURIComponent(title);
+  window.open('https://wa.me/'+WA+'?text=Hello+Santro+Doha!+I+would+like+to+apply+for+the+*'+encodeURIComponent(t)+'*+vacancy.+Please+contact+me.+Thank+you!','_blank');
+}
+function enquireClient(title){
+  var t=decodeURIComponent(title);
+  window.open('https://wa.me/'+WA+'?text=Hello+Santro+Doha!+I+am+interested+in+*'+encodeURIComponent(t)+'*.+Please+send+me+more+details.+Thank+you!+%F0%9F%87%B6%F0%9F%87%A6','_blank');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "Elite Zahra Admin Panel",
+  "short_name": "Elite Zahra Admin",
+  "description": "Admin management system for Elite Zahra Cleaning Services",
+  "start_url": "/elite-admin-panel.html",
+  "display": "standalone",
+  "background_color": "#070b10",
+  "theme_color": "#070b10",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%23070b10' rx='32'/><text y='130' x='20' font-size='120'>📊</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business"],
+  "lang": "en"
+}
