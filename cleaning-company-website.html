@@ -398,7 +398,6 @@ footer{background:var(--black);color:var(--text);padding:3.5rem 3.5rem 2rem}
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="logo.png" alt="Oblin Group" onerror="this.style.display='none'"/>
     <div class="nav-logo-text">OBLIN GROUP <span>GENERAL CLEANING</span></div>
   </a>
   <ul class="nav-links">
@@ -1122,7 +1121,7 @@ function closeLstOut(e,type){
 
 function renderListings(type){
   var isJob=type==='job';
-  var key=isJob?'santro_job_listings':'santro_client_listings';
+  var key=isJob?'oblin_job_listings':'oblin_client_listings';
   var items=[];
   try{items=JSON.parse(localStorage.getItem(key)||'[]');}catch(e){}
   if(!items.length){
@@ -1152,7 +1151,7 @@ function nbTab(f){
 function renderNb(filter){
   filter=filter||'all';
   var posts=[];
-  try{posts=JSON.parse(localStorage.getItem('santro_nb_posts')||'[]');}catch(e){}
+  try{posts=JSON.parse(localStorage.getItem('oblin_nb_posts')||'[]');}catch(e){}
   var grid=document.getElementById('nb-grid');
   if(!grid)return;
   var filtered=filter==='all'?posts:posts.filter(function(p){return p.type===filter;});
