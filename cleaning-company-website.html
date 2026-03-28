@@ -980,6 +980,16 @@ function waTab(t){
 
 function enc(s){return encodeURIComponent(s);}
 
+function saveToAdmin(type,data){
+  var key=type==='job'?'oblin_job_listings':'oblin_client_listings';
+  var items=[];
+  try{items=JSON.parse(localStorage.getItem(key)||'[]');}catch(e){}
+  data.id=Date.now();
+  data.date=new Date().toISOString();
+  data.status='New';
+  items.unshift(data);
+  localStorage.setItem(key,JSON.stringify(items));
+}
 function sendWaClient(){
   var n=document.getElementById('wc-n').value.trim();
   var l=document.getElementById('wc-l').value.trim();
@@ -990,6 +1000,7 @@ function sendWaClient(){
   if(s)m+='%0AService: '+enc(s);
   if(d)m+='%0AType: '+enc(d);
   if(l)m+='%0ALocation: '+enc(l);
+  saveToAdmin('client',{name:n,service:s,type:d,location:l,source:'Maid & Nanny'});
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
 }
 function sendWaJob(){
@@ -1004,6 +1015,7 @@ function sendWaJob(){
   if(r)m+='%0ARole: '+enc(r);
   if(e)m+='%0AExperience: '+enc(e);
   if(l)m+='%0ALocation: '+enc(l);
+  saveToAdmin('job',{name:n,nationality:nat,role:r,experience:e,location:l,source:'Job Widget'});
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
 }
 
@@ -1019,6 +1031,7 @@ function sendBookingWA(){
   if(s)m+='%0AService: '+enc(s);
   if(l)m+='%0ALocation: '+enc(l);
   if(d)m+='%0ADate: '+enc(d);
+  saveToAdmin('client',{name:n,phone:p,service:s,location:l,date:d,source:'Book a Service'});
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
   closeModal('book');
 }
@@ -1033,6 +1046,7 @@ function sendQuoteMdWA(){
   if(p)m+='%0APhone: '+enc(p);
   if(s)m+='%0AService: '+enc(s);
   if(l)m+='%0ALocation: '+enc(l);
+  saveToAdmin('client',{name:n,phone:p,service:s,location:l,source:'Free Quote'});
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
   closeModal('quote');
 }
